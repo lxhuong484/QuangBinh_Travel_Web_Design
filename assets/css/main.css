@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+    --header-height: 70px;
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #0d849a;
+    --third-color:rgb(136, 221, 236);
+    --second-color: #076374;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin-top: var(--header-height);
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    overflow-x: hidden;
+}
+
+/* ----------  REUSABLE CSS CLASSED --------------  */
+
+.grid {
+    display: grid;
+}
+
+.container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    padding: 5rem 0 2.5rem;
+}
+
+.section__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--second-color);
+    text-transform: capitalize;
+    line-height: 1.8rem;
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.section__description {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    -webkit-tap-highlight-color: none;
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem 1.5rem;
+    transition: .5s;
+}
+
+.button:hover {
+    background: var(--second-color);
+}
+
+.button--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header CSS  */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.scroll-header {
+    background-color: var(--white-color);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+.scroll-header .nav__logo, .scroll-header .nav__link {
+    color: var(--primary-color);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo {
+    color: var(--white-color);
+    font-size: 1.1rem;
+}
+
+.nav__list {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__item:hover::after {
+    transform: translateX(0);
+}
+
+.nav__item:hover .subnav__list {
+    display: block;
+}
+
+.subnav__list {
+    position: absolute;
+    display: none;
+    background-color: var(--white-color);
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    border-radius: 4px;
+    padding: 6px 12px;
+    transform-origin: 10% top;
+    animation: fadeIn ease-in-out .8s;
+}
+
+.subnav__item {
+    position: relative;
+    display: block;
+    line-height: 1.6rem;
+    transition: .3s;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.subnav__item:hover {
+    padding: 0 12px;
+}
+
+.subnav__item:hover.subnav__item::after {
+    display: block;
+}
+
+.subnav__item::after {
+    position: absolute;
+    display: none;
+    content: '';
+    width: 2px;
+    height: 18px;
+    top: 50%;
+    left: 0;
+    line-height: 1.6rem;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    animation: fadeIn ease-in-out .3s;
+}
+
+.subnav__link {
+    font-size: .8rem;
+    font-weight: 400;
+    display: block;
+    color: var(--primary-color);
+    padding: 4px 0;
+    transition: opacity .3s;
+    text-transform: capitalize;
+}
+
+.subnav__link:hover {
+    opacity: .8;
+}
+
+.nav__link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 12px;
+    color: var(--white-color);
+    font-size: .9rem;
+    overflow: hidden;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-101%);
+    background-color: var(--white-color);
+    transition: transform .6s;
+}
+
+.nav__link:hover::after {
+    transform: translateX(0);
+}
+
+.nav__link i {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    right: -1px;
+    transform: translateY(-50%) rotate(0);
+    transition: .8s;
+}
+
+.nav__link:hover i {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Home CSS  */
+
+.home__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(.9);
+    object-position: center;
+}
+
+.home__container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+}
+
+.home__data-subtitle {
+    display: block;
+    color: var(--white-color);
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.home__data-title {
+    font-size: 3rem;
+    color: var(--white-color);
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.home__data-button-wrapper {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.home__data-button {
+    column-gap: 5px;
+    margin-bottom: 2rem;
+    transition: .5s;
+    font-weight: 600;
+}
+
+.home__data-button-play i {
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+.home__social {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+}
+
+.home__social-link {
+    color: var(--white-color);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+    transition: opacity .3s;
+}
+
+.home__social-icon {
+    font-size: 1.4rem;
+}
+
+.home__social-link:hover {
+    opacity: .6;
+}
+
+.home__info {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--second-color);
+    overflow: hidden;
+    padding: 1.2rem;
+    column-gap: 1rem;
+}
+
+.home__info-title {
+    color: var(--white-color);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.home__info-button {
+    background: transparent;
+    font-size: 1rem;
+    transition: opacity .3s;
+}
+
+.home__info-button:hover {
+    opacity: .4;
+}
+
+.home__info-overlay {
+    width: 200px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.home__info-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.home__info-img:hover {
+    transform: scale(1.1);
+}
+
+/* About CSS  */
+
+.about__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.about__title, .about__description {
+    text-align: initial;
+}
+
+.about__data-button {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.about__img-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+}
+
+.about__img-overlay {
+    width: 230px;
+    overflow: hidden;
+}
+
+.about__img-overlay:first-child {
+    height: 360px;
+}
+
+.about__img-overlay:last-child {
+    height: 400px;
+}
+
+.about__img-one, .about__img-two {
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s;
+}
+
+.about__img-overlay img:hover {
+    transform: scale(1.1);
+}
+
+/* ============= TOUR CSS ===============  */
+
+.tour__container {
+    grid-template-columns: .7fr;
+    justify-content: center;
+}
+
+.video__tour-wrapper {
+    position: relative;
+}
+
+.tour__video {
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video__tour-button {
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+    padding: .6rem 1.5rem;
+}
+
+.tour__button-icon {
+    font-size: 1.4rem;
+}
+
+/* ==================== PLACE CSS ==============  */
+
+.place__container {
+    grid-template-columns: repeat(3, .3fr);
+    justify-content: center;
+    grid-gap: 1rem 2rem;
+}
+
+.place__card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    height: 380px;
+    border-radius: 6px;
+}
+
+.place__card:hover .place__img {
+    transform: scale(1.1);
+}
+
+.place__img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    filter: brightness(90%);
+    transition: transform .5s;
+}
+
+.place__data {
+    display: block;
+    padding: 0 1rem;
+    border-radius: 8px;
+    position: absolute;
+    left: .5rem;
+    bottom: .5rem;
+    background-color: var(--primary-color);
+}
+
+.place__title {
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.place__description {
+    color: var(--white-color);
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.place__rating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    top: 1rem;
+    right: 1rem;
+    text-shadow: 1px 1px var(--black-color);
+}
+
+.place__rating-icon {
+    color: var(--white-color);
+}
+
+.place__rating-number {
+    color: var(--white-color);
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.place__price {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    color: var(--white-color);
+    background: var(--primary-color);
+    padding: 2px 12px;
+    border-radius: 16px;
+}
+
+/* ================== EXPERIENCE CSS ===============  */
+
+.experience__container {
+    grid-template-columns: .7fr;
+    justify-content: center;
+}
+
+.experience__content {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+}
+
+.experience__number {
+    display: block;
+    color: var(--primary-color);
+    margin-bottom: .5rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.experience__description {
+    font-weight: 400;
+    font-size: .7rem;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.experience__img-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.experience__img-overlay {
+    overflow: hidden;
+}
+
+.experience__img-overlay:first-child {
+    height: 338px;
+    margin-right: 3rem;
+    position: relative;
+}
+
+.experience__img-overlay:last-child {
+    position: absolute;
+    right: 0;
+    height: 290px;
+    width: 170px;
+}
+
+.experience__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.experience__img-content {
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    transition: .8s;
+}
+
+.experience__img-content-title {
+    color: var(--white-color);
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.experience__img-content-desc {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+    background-color: var(--white-color);
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.experience__img-content-desc:hover {
+    opacity: .8;
+}
+
+.experience__img-overlay:first-child:hover .experience__img-content {
+    right: 0;
+}
+
+/* ================= PLAY MUSIC ==============  */
+
+.play__music {
+    position: fixed;
+    cursor: pointer;
+    bottom: 1rem;
+    left: 1rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.play__music-icon {
+    display: block;
+    color: var(--white-color);
+    animation: rotateIcon 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.play__music-icon.playMusic {
+    animation-play-state: running;
+}
+
+/* ================== DISCOVER CSS ================  */
+
+.discover__container {
+    max-width: 708px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.discover__card {
+    position: relative;
+    overflow: hidden;
+    width: 237px;
+}
+
+.discover__img {
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+}
+
+.discover__img:hover {
+    transform: scale(1.1);
+}
+
+.discover__data {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+}
+
+.discover__title, .discover__description {
+    color: var(--white-color);
+    text-transform: capitalize;
+}
+
+.discover__title {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.discover__description {
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+/* ================= SUBSCRIBE FORM CSS =================  */
+
+.subscribe__container {
+    background-color: var(--second-color);
+    padding: 3.5rem 0;
+}
+
+.subscribe__title, .subscribe__description {
+    color: var(--white-color);
+}
+
+.subscribe__form {
+    width: 470px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: .5rem;
+    background-color: var(--white-color);
+}
+
+.subscribe__form-input {
+    flex: 1;
+    border: none;
+    padding: 0 .5rem;
+    outline: none;
+}
+
+.subscribe__form-button {
+    font-size: .8rem;
+    font-weight: 200;
+}
+
+/* ==================== FOOTER CONTENT ================  */
+
+.footer__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2;
+    row-gap: 1rem;
+}
+
+.footer__content {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+}
+
+.footer__title {
+    color: var(--second-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.footer__data-link {
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.footer__desc, .footer__data-link {
+    color: var(--black-color);
+}
+
+
+.footer__infomation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__copyright, .footer__infomation-right {
+    color: rgb(167, 167, 167);
+    font-weight: 200;
+    font-size: .7rem;
+}
+
+/* =================== SCROLL TOP ==================  */
+
+.scroll-top {
+    position: fixed;
+    cursor: pointer;
+    z-index: 9999;
+    right: 1rem;
+    bottom: 1rem;
+    height: 40px;
+    width: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+}
+
+.scroll-top-icon{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* ====================== SCROLL BAR CSS ================  */
+::-webkit-scrollbar{
+    width: .6rem;
+    background: var(--third-color);
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background: var(--second-color);
+}

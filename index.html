@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Quang Binh Travel Website</title>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <header class="header" id="header">
+            <div class="nav container">
+                <a href="#" class="nav__logo">
+                    QB Travel
+                </a>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link"> About &nbsp; <i class="ri-arrow-down-s-line"></i>
+                        </a>
+                        <ul class="subnav__list">
+                            <li class="subnav__item">
+                                <a href="#" class="subnav__link">About Us</a>
+                            </li>
+                            <li class="subnav__item">
+                                <a href="#" class="subnav__link">About Us</a>
+                            </li>
+                            <li class="subnav__item">
+                                <a href="#" class="subnav__link">About Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#tour" class="nav__link">Tour</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#places" class="nav__link">Places</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Experience</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="main" id="main">
+            <section class="home" id="home">
+                <video class="home__video" id="video-file">
+                    <source src="./assets/video/video.mp4" type="video/mp4">
+                </video>
+                <div class="home__container container">
+                    <div class="home__data">
+                        <span class="home__data-subtitle">Discover your place</span>
+                        <h1 class="home__data-title">Welcome to <br> Quang Binh Province <br> Let's Go</h1>
+                        <div class="home__data-button-wrapper">
+                            <button class="button button--flex home__data-button">Explore <i
+                                    class="ri-arrow-right-line"></i></button>
+                            <button class="button button--flex home__data-button home__data-button-play"
+                                id="button-play-video-home">Play Video<i class="ri-play-circle-line"
+                                    id="icon-play-video-home"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="home__social">
+                        <a href="#" class="home__social-link"><i class="home__social-icon ri-facebook-box-fill"></i></a>
+                        <a href="#" class="home__social-link"><i class="home__social-icon ri-instagram-fill"></i></a>
+                        <a href="#" class="home__social-link"><i class="home__social-icon ri-twitter-fill"></i></a>
+                    </div>
+
+                    <div class="home__info">
+                        <div class="home__info-data">
+                            <p class="home__info-title">3 Best places <br> to visit</p>
+                            <button class="button button--flex home__info-button">More
+                                <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                        <div class="home__info-overlay">
+                            <img src="./assets/images/home__info.jpg" alt="" class="home__info-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about section" id="about">
+                <div class="about__container container">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">More Information <br> About The Best Beaches</h2>
+                        <p class="section__description about__description">
+                            You can find the most beautiful and pleasant places at the best price
+                            with special discounts, you choose the place we will guide you all the way to wait, get your
+                            place now.
+                        </p>
+                        <button class="button about__data-button">Choose a place</button>
+                    </div>
+                    <div class="about__img-wrapper">
+                        <div class="about__img-overlay">
+                            <img src="./assets/images/about1.jpg" alt="" class="about__img-one">
+                        </div>
+                        <div class="about__img-overlay">
+                            <img src="./assets/images/about2.jpg" alt="" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tour section" id="tour">
+                <div class="tour__container container grid">
+                    <div class="tour__data">
+                        <h2 class="section__title">Video Tour</h2>
+                        <p class="section__description">
+                            Find out more with our video of the most beautiful <br> and pleasant places for you and your
+                            family
+                        </p>
+                    </div>
+                    <div class="video__tour-wrapper">
+                        <video class="tour__video" id="video-tour">
+                            <source src="./assets/video/video2.mp4" type="video/mp4">
+                        </video>
+                        <button class="button button--flex video__tour-button" id="video-tour-button"><i
+                                class="tour__button-icon ri-play-line" id="video-tour-icon"></i></button>
+                    </div>
+                </div>
+            </section>
+            <section class="place section" id="places">
+                <h2 class="section__title">Choose your place</h2>
+                <p class="section__description">Let's choose your place and let's go !</p>
+                <div class="place__container container grid">
+                    <div class="place__card">
+                        <img src="./assets/images/place4.jpg" alt="" class="place__img">
+                        <div class="place__data">
+                            <h3 class="place__title">Son Doong</h3>
+                            <p class="place__description">Quang Binh, Viet Nam</p>
+                        </div>
+                        <div class="place__rating">
+                            <i class=" place__rating-icon ri-star-s-fill"></i>
+                            <span class="place__rating-number">4.9</span>
+                        </div>
+                        <div class="place__price">
+                            <span>$2999</span>
+                        </div>
+                    </div>
+                    <div class="place__card">
+                        <img src="./assets/images/place2.jpg" alt="" class="place__img">
+                        <div class="place__data">
+                            <h3 class="place__title">Phong Nha</h3>
+                            <p class="place__description">Quang Binh, Viet Nam</p>
+                        </div>
+                        <div class="place__rating">
+                            <i class="place__rating-icon ri-star-s-fill"></i>
+                            <span class="place__rating-number">4.8</span>
+                        </div>
+                        <div class="place__price">
+                            <span>$1099</span>
+                        </div>
+                    </div>
+                    <div class="place__card">
+                        <img src="./assets/images/place3.jpg" alt="" class="place__img">
+                        <div class="place__data">
+                            <h3 class="place__title">Nhat Le Beaches</h3>
+                            <p class="place__description">Quang Binh, Viet Nam</p>
+                        </div>
+                        <div class="place__rating">
+                            <i class="place__rating-icon ri-star-s-fill"></i>
+                            <span class="place__rating-number">5.0</span>
+                        </div>
+                        <div class="place__price">
+                            <span>$3999</span>
+                        </div>
+                    </div>
+                    <div class="place__card">
+                        <img src="./assets/images/place1.jpg" alt="" class="place__img">
+                        <div class="place__data">
+                            <h3 class="place__title">Thuan Hoa City</h3>
+                            <p class="place__description">Quang Binh, Viet Nam</p>
+                        </div>
+                        <div class="place__rating">
+                            <i class="place__rating-icon ri-star-s-fill"></i>
+                            <span class="place__rating-number">5.0</span>
+                        </div>
+                        <div class="place__price">
+                            <span>$1999</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="experience section" id="experience">
+                <h2 class="section__title">With Our Experience <br> We Will Serve You</h2>
+                <p class="section__description">Quang Binh travel experience !</p>
+
+                <div class="experience__container container grid">
+                    <div class="experience__content">
+                        <div class="experience__data">
+                            <span class="experience__number">20</span>
+                            <span class="experience__description">Year <br> Experience</span>
+                        </div>
+                        <div class="experience__data">
+                            <span class="experience__number">650+</span>
+                            <span class="experience__description">Tourist <br> Destination</span>
+                        </div>
+                        <div class="experience__data">
+                            <span class="experience__number">2000+</span>
+                            <span class="experience__description">Complete <br> Tour One Month</span>
+                        </div>
+                    </div>
+                    <div class="experience__img-wrapper">
+                        <div class="experience__img-overlay">
+                            <img src="./assets/images/experience2.jpeg" alt="" class="experience__img">
+                            <div class="experience__img-content">
+                                <h3 class="experience__img-content-title">What are you waiting for ?</h3>
+                                <p class="experience__img-content-desc">Let's go now</p>
+                            </div>
+                        </div>
+                        <div class="experience__img-overlay">
+                            <img src="./assets/images/experience1.jpeg" alt="" class="experience__img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="discover section" id="discover">
+                <h2 class="section__title">Discover The Most <br> Attractive Places</h2>
+                <div class="discover__container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- --------------- DISCOVER 1 --------------  -->
+                        <div class="discover__card swiper-slide">
+                            <img src="./assets/images/discover1.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h3 class="discover__title">Phong Nha - Ke Bang</h3>
+                                <p class="discover__description">24 Tours Available</p>
+                            </div>
+                        </div>
+
+                        <!-- --------------- DISCOVER 2 --------------  -->
+                        <div class="discover__card swiper-slide">
+                            <img src="./assets/images/discover2.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h3 class="discover__title">Thien Duong</h3>
+                                <p class="discover__description">24 Tours Available</p>
+                            </div>
+                        </div>
+
+                        <!-- --------------- DISCOVER 3 --------------  -->
+                        <div class="discover__card swiper-slide">
+                            <img src="./assets/images/discover3.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h3 class="discover__title">Nhat Le Beaches</h3>
+                                <p class="discover__description">24 Tours Available</p>
+                            </div>
+                        </div>
+
+                        <!-- --------------- DISCOVER 4 --------------  -->
+                        <div class="discover__card swiper-slide">
+                            <img src="./assets/images/discover4.jpg" alt="" class="discover__img">
+                            <div class="discover__data">
+                                <h3 class="discover__title">Than Dinh Mountain</h3>
+                                <p class="discover__description">24 Tours Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="subscribe section">
+                <div class="subscribe__bg">
+                    <div class="subscribe__container container">
+                        <h2 class="section__title subscribe__title">Subscribe Our <br> Newsletter</h2>
+                        <p class="section__description subscribe__description">Subscribe to our newsletter and get a
+                            special
+                            20% discount.</p>
+                        <form action="" class="subscribe__form">
+                            <input type="text" name="" id="" placeholder="Enter Email..." class="subscribe__form-input">
+                            <button class="button subscribe__form-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="footer section">
+                <div class="footer__container container grid">
+                    <div class="footer__content grid">
+                        <div class="footer__data">
+                            <h3 class="footer__title">QB Travel</h3>
+                            <p class="footer__desc">
+                                Come to Quang Binh travel to experience the best feelings with family
+                                and friends. <br> Let's go now !
+                            </p>
+                        </div>
+                        <div class="footer__data">
+                            <h3 class="footer__title">About</h3>
+                            <ul class="footer__data-list">
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">About Us</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">New Blogs</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Features</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__data">
+                            <h3 class="footer__title">Company</h3>
+                            <ul class="footer__data-list">
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Team</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Plan Y Pricing</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Become A Member</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__data">
+                            <h3 class="footer__title">Contact</h3>
+                            <ul class="footer__data-list">
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Facebook: XH</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Instagram: XH</a>
+                                </li>
+                                <li class="footer__data-item">
+                                    <a href="#" class="footer__data-link">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="footer__infomation">
+                        <div class="footer__copyright">
+                            <i class="footer__copyright-icon ri-copyright-line"></i>
+                            <span class="footer__copyright-content">2021 XH web developer. All rights reserved.</span>
+                        </div>
+                        <div class="footer__infomation-right">
+                            <span>Privacy Policy</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PLAY MUSIC BACKGROUND =================  -->
+            <div class="play__music" id="play-music-button" title="Listen Music Background">
+                <audio id="music-background-file">
+                    <source src="./assets/music/EndOfTime.mp3" type="audio/mp3">
+                </audio>
+                <i class="play__music-icon ri-music-2-line" id="play-music-icon"></i>
+            </div>
+
+            <!-- =================== BUTTON SCROLL TOP ===================  -->
+            <div class="scroll-top" id="scroll-top">
+                <i class="scroll-top-icon ri-arrow-up-line"></i>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <script src="./assets/js/scrollreveal.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
